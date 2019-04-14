@@ -1,7 +1,7 @@
 /* ****************************************************************
  * @author: <Mark Gerone F. Grospe>
- * @app name: <Five numbers>
- * @app desc: <A program that will accept five (5) integers and display them to the users.>
+ * @app name: <Equilateral triangle>
+ * @app desc: <A progrm that will display an equilateral triangle with a height depending on the user.>
  * @history:
  *  - <yyyy/mm/dd> | <name>
  *      -- <description>
@@ -33,25 +33,40 @@ int main() {
     // Place your code logic after this comment line
     // ***********************************************************
 
-    int userInput[5];
+    int height;
+    char rowValue[] = {"ABCDEFGHIJ"};
 
-    cout << "Kindly enter five numbers: " << endl;
+    cout << "This program will draw a triangle for you!\n";
+    cout << "Please enter a number from 1 to 10: ";
+    cin >> height;
 
-    for ( int i = 0; i < 5; i++){
-        cout << i + 1 << ".";
-        cin >> userInput[i];
+    while (height <=0 || height >10) {
+        cout << endl <<"You entered an invalid number:" << endl;
+        cout << "Please enter a valid number: ";
+        cin >> height;
     }
+    cout << "\n";
+    cout << "-------------------------------\n\n";
 
-    cout << "The numbers you entered are: " << endl
-         << "\t1. " << userInput[0] << endl
-         << "\t2. " << userInput[1] << endl
-         << "\t3. " << userInput[2] << endl
-         << "\t4. " << userInput[3] << endl
-         << "\t5. " << userInput[4] << endl
-         << endl;
+    int row = 0;
+    while (row < height) {
+        int count = 0;
+            while (count < height - row) {
+                cout << " ";
+                count++;
+            }
+
+            count = 0;
+            while (count < 2 * row +1) {
+                cout << rowValue[row];
+                count++;
+            }
+            cout << endl;
+            row++;
+    }
+  
 
     cin.ignore();
-
     // ********************** DO NOT CHANGE **********************
     // Print a new line and ask user for any key before exiting
     // ***********************************************************
