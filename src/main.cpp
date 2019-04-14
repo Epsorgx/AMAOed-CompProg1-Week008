@@ -1,7 +1,7 @@
 /* ****************************************************************
  * @author: <Mark Gerone F. Grospe>
- * @app name: <Equilateral triangle>
- * @app desc: <A progrm that will display an equilateral triangle with a height depending on the user.>
+ * @app name: <Number sorter>
+ * @app desc: <A program that ascendingly sort six numbers from the user.>
  * @history:
  *  - <yyyy/mm/dd> | <name>
  *      -- <description>
@@ -33,40 +33,37 @@ int main() {
     // Place your code logic after this comment line
     // ***********************************************************
 
-    int height;
-    char rowValue[] = {"ABCDEFGHIJ"};
+    int n[6];
 
-    cout << "This program will draw a triangle for you!\n";
-    cout << "Please enter a number from 1 to 10: ";
-    cin >> height;
-
-    while (height <=0 || height >10) {
-        cout << endl <<"You entered an invalid number:" << endl;
-        cout << "Please enter a valid number: ";
-        cin >> height;
+    //Get user input
+    for (int i = 0; i < 6; i++) {
+        cout << "Enter a number[" << i +1 << "]: ";
+        cin >> n[i];
     }
-    cout << "\n";
-    cout << "-------------------------------\n\n";
 
-    int row = 0;
-    while (row < height) {
-        int count = 0;
-            while (count < height - row) {
-                cout << " ";
-                count++;
-            }
+    cout << endl;
 
-            count = 0;
-            while (count < 2 * row +1) {
-                cout << rowValue[row];
-                count++;
+    // Sort
+
+    for (int i = 0; i < 6; i++) {
+            for (int t = 0; t < 6; t++) {
+                if (n[i] < n[t]) {
+                    int temp = n[i];
+                    n[i] = n[t];
+                    n[t] = temp;
+                }
             }
-            cout << endl;
-            row++;
     }
-  
 
+    // Display back to the user
+    cout << "The sorted numbers in ascending order:" << endl;
+    
+    for (int i = 0; i < 6; i++) {
+        cout << n[i] << endl;
+    }
     cin.ignore();
+
+
     // ********************** DO NOT CHANGE **********************
     // Print a new line and ask user for any key before exiting
     // ***********************************************************
