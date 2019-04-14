@@ -1,7 +1,7 @@
 /* ****************************************************************
- * @author: <your name here>
- * @app name: <your application name here>
- * @app desc: <describe the purpose of your application here>
+ * @author: <Mark Gerone F. Grospe>
+ * @app name: <Five numbers>
+ * @app desc: <A program that will accept five (5) integers and display them to the users.>
  * @history:
  *  - <yyyy/mm/dd> | <name>
  *      -- <description>
@@ -33,7 +33,24 @@ int main() {
     // Place your code logic after this comment line
     // ***********************************************************
 
-    cout << "Hello World!";
+    int userInput[5];
+
+    cout << "Kindly enter five numbers: " << endl;
+
+    for ( int i = 0; i < 5; i++){
+        cout << i + 1 << ".";
+        cin >> userInput[i];
+    }
+
+    cout << "The numbers you entered are: " << endl
+         << "\t1. " << userInput[0] << endl
+         << "\t2. " << userInput[1] << endl
+         << "\t3. " << userInput[2] << endl
+         << "\t4. " << userInput[3] << endl
+         << "\t5. " << userInput[4] << endl
+         << endl;
+
+    cin.ignore();
 
     // ********************** DO NOT CHANGE **********************
     // Print a new line and ask user for any key before exiting
